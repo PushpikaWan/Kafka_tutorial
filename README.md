@@ -1,12 +1,12 @@
 
-###initialize Project
+### initialize Project
 - Create Maven / Gradle project
 - Add Kafka dependency first (chose this https://mvnrepository.com/artifact/org.apache.kafka/kafka)
 - Add SL4j simple binding (https://mvnrepository.com/artifact/org.slf4j/slf4j-simple) (default it has test scope, remove it)
 
 
 
-##configuration
+## configuration
 1. add dataDir path in zookeeper
 2. add logs.dir in server.properties 
 3. add below line to server.properties

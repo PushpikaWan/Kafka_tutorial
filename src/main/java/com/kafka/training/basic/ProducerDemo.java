@@ -1,4 +1,4 @@
-package com.kafka.training;
+package com.kafka.training.basic;
 
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerConfig;
@@ -7,10 +7,13 @@ import org.apache.kafka.common.serialization.StringSerializer;
 
 import java.util.Properties;
 
+import static com.kafka.training.basic.Constants.BOOTSTRAP_SERVER;
+import static com.kafka.training.basic.Constants.FIRST_TOPIC;
+
 public class ProducerDemo {
 
     public static void main(String[] args) {
-        final String BOOTSTRAP_SERVER = "127.0.0.1:9092";
+
 
         //create properties - https://kafka.apache.org/documentation/#producerconfigs
         Properties properties = new Properties();
@@ -20,10 +23,10 @@ public class ProducerDemo {
 
 
         //create the producer
-        KafkaProducer<String, String> producer = new KafkaProducer<String, String>(properties);
+        KafkaProducer<String, String> producer = new KafkaProducer<>(properties);
 
         //create a producer record
-        ProducerRecord<String, String> producerRecord = new ProducerRecord<String, String>("second_topic", "hello world2");
+        ProducerRecord<String, String> producerRecord = new ProducerRecord<>(FIRST_TOPIC, "hello world2");
 
         //send data
         producer.send(producerRecord);
